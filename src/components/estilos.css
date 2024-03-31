@@ -1,0 +1,188 @@
+.login {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.58);
+    width: 100%;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.input {
+    width: 30%;
+    height: 56px;
+    border-radius: 4px;
+    position: relative;
+    transition: 0.3s all;
+    font-size: larger;
+}
+
+.input:hover {
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.submit {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    vertical-align: middle;
+    transition: color .25s;
+
+}
+
+.apuestas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+ 
+}
+
+.chips {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.chip {
+    width: 80px;
+    height: 80px;
+    margin: -5px;
+
+}
+
+
+.text {
+    font-size: large;
+    color: white;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Ajusta el ancho del contenedor según sea necesario */
+    height: 100%;
+    /* Ajusta la altura del contenedor según sea necesario */
+}
+
+.contenedorBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Ajusta el ancho del contenedor según sea necesario */
+    height: 80px;
+    /* Ajusta la altura del contenedor según sea necesario */
+}
+
+
+.resultado {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    /* Espaciado interno */
+    border-radius: 5px;
+    height: 25px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+.resultado.show {
+    opacity: 1;
+
+}
+
+.dealer {
+    width: 80px;
+}
+
+@keyframes moveChip {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, -100px);
+        /* Mueve la ficha hacia arriba */
+        opacity: 0;
+    }
+}
+
+
+@keyframes moveChipDown {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+
+    100% {
+        transform: translateY(300px);
+        /* Ajusta la distancia de movimiento según sea necesario */
+        opacity: 0;
+
+    }
+}
+
+.animate-down {
+    animation: moveChipDown 1.5s ease forwards;
+}
+
+@keyframes moveChipUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+
+    100% {
+        transform: translateY(-300px);
+        /* Ajusta la distancia de movimiento según sea necesario */
+        opacity: 0;
+
+    }
+}
+
+.animate-up {
+    animation: moveChipUp 1.5s ease forwards;
+}
+
+.buttonBet {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #3a86ff;
+    box-shadow: 0 5px #4433ff;
+    font-size: large;
+}
+
+.buttonBet:hover {
+    box-shadow: 0 3px #4433ff;
+    top: 1px;
+}
+
+
+.buttonBet:active {
+    box-shadow: 0 0 #4433ff;
+    top: 5px;
+    opacity: 0; /* Desaparece al hacer clic */
+    transition: opacity 0.5s ease; /* Agrega una transición suave de la opacidad */
+}
