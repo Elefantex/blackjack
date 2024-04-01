@@ -22,7 +22,7 @@ export default function Apuestas({ data, ganador, onRestart }) {
 
     const sumarDinero = async (usuario, puntos) => {
         try {
-            const response = await fetch("http://localhost:3001/users", {
+            const response = await fetch("https://blackjack-ggm5.onrender.com/users", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -77,7 +77,7 @@ export default function Apuestas({ data, ganador, onRestart }) {
     }
 
     const endBets = () => {
-    
+
         setVisibility(false)
         onRestart()
     }
@@ -124,26 +124,13 @@ export default function Apuestas({ data, ganador, onRestart }) {
 
     return (
         <div className="apuestas">
-            <div className={`resultado ${ganador ? 'show' : ''}`}>
-                {ganador === "Banca" && ganador !== "Empate" ? <div>You lose </div> : ganador === "Usuario" ? <div>You win </div> : <div></div>}
-                {ganador === "Empate" ? <div>Draw</div> : <div></div>}
-            </div>
-            <div className="apostado">
-                <div className="text">
-                    Betted: {apostado}
-                </div>
-                {chips.length > 0 ? <>
-                    <img className={`chip ${animateChipDown ? 'animate-down' : ''} ${animateChipUp ? 'animate-up' : ''}`}
-                        onClick={() => {
-                            if (visibility) {
-                                quitarApuesta(chips[chips.length - 1]);
-                            }
-                        }}
 
-                        src={require(`${"../img/"}${"chip"}${chips[chips.length - 1]}.png`)} alt="" />
+            {visibility && apostado > 0 ? <div className="contenedorBtn">
 
-                </> : <div className="chip"></div>}
-            </div>
+                <button className="buttonBet" onClick={() => endBets()}>BET</button>
+
+            </div> : <div style={{ width: "130px", height: "80px" }} className=""></div>}
+            {money === 0 && apostado === 0 ? <div className="contenedorBtn"><button className="buttonBet" onClick={() => reponer()}>Free chips</button> </div> : null}
 
 
             <div className="chips">
@@ -195,20 +182,32 @@ export default function Apuestas({ data, ganador, onRestart }) {
 
                 </div>
 
-                {visibility && apostado > 0 ? <div className="contenedorBtn">
 
-                    <button className="buttonBet" onClick={() => endBets()}>BET</button>
-                </div> : <div className="contenedorBtn"></div>}
                 <div className="text">Money: {money}</div>
 
 
-                <div>
-                    {money === 0 && apostado === 0 ? <><button onClick={() => reponer()}>Free chips</button> </> : null}
-
-                </div>
-
+            
 
             </div>
+
+            <div className="apostado"  style={{height:"108px",width:"89px"}}>
+
+                {chips.length > 0 ? <>
+                    <img className={`chip ${animateChipDown ? 'animate-down' : ''} ${animateChipUp ? 'animate-up' : ''}`}
+                        onClick={() => {
+                            if (visibility) {
+                                quitarApuesta(chips[chips.length - 1]);
+                            }
+                        }}
+
+                        src={require(`${"../img/"}${"chip"}${chips[chips.length - 1]}.png`)} alt="" />
+
+                </> : <div className="chip"></div>}
+                <div className="text">
+                    Betted: {apostado}
+                </div>
+            </div>
+          
 
 
         </div>

@@ -197,9 +197,8 @@ function Juego({ data }) {
 
     const restart = () => {
         setVisibility(false)
-        setStand(false)
         setFinUser(true)
-        setRepartir(false)
+
         setCartasDealer([])
         setCartasUser([])
         setValorCartasUser(0)
@@ -209,7 +208,9 @@ function Juego({ data }) {
 
         setVisibilityCard(true)
         start()
+        setStand(false)
 
+        setRepartir(false)
 
     }
 
@@ -292,74 +293,90 @@ function Juego({ data }) {
         <div className="App" >
 
             <div className="container">
+                <div className="prueba">
+                    <div>
+                        <img className="dealer" src={ganador === "Usuario" ? require(`${"../img/"}${"dealerAngry"}.png`) : require(`${"../img/"}${"dealer"}.png`)} alt="" />
 
-                <div>
-                    <img className="dealer" src={ganador === "Usuario" ? require(`${"../img/"}${"dealerAngry"}.png`) : require(`${"../img/"}${"dealer"}.png`)} alt="" />
-
-                </div>
-
-                <div className="table">
-                    {visibility && visibilityCard ? <div className="valor text">
-
-                        Dealer:{valorCartasDealer}
-                    </div> : null}
-
-                    <div className="cartas">
-
-                        {
-                            cartasDealer.map((item, index) => {
-                                if ((index === 0 && !visibility)) {
-                                    return (
-                                        <img className="carta" src={require(`${"../img/"}${"back"}.png`)} alt="" />
-
-                                    )
-                                }
-                                if (visibilityCard) {
-                                    return (
-                                        <img className="carta" src={require(`${"../img/"}${item}${letrasAleatorias[index]}.png`)} alt="" />
-                                    )
-                                } else {
-
-                                }
-
-                                return (
-                                    <img className="carta" src={require(`${"../img/"}${"back"}.png`)} alt="" />)
-                            })
-                        }
                     </div>
 
+                    <div className="table">
 
-                    <div className="cartas">
+
+                        <div className="cartas">
+                        {visibility && visibilityCard ? <div style={{ height: "20px" }} className="valor text">
+
+Dealer:{valorCartasDealer}
+</div> : <div style={{ height: "20px" }} className="valor text"></div>}
+                            <div>
 
 
-                        {
-                            cartasUser.map((item, index) => {
-                                if (visibilityCard) {
-                                    return (
-                                        <img className="carta" src={require(`${"../img/"}${item}${letrasAleatorias[index]}.png`)} alt="" />
-                                    )
-                                } else {
-                                    return (
-                                        <img className="carta" src={require(`${"../img/"}${"back"}.png`)} alt="" />
 
-                                    )
+                                {
+                                    cartasDealer.map((item, index) => {
+                                        if ((index === 0 && !visibility)) {
+                                            return (
+                                                <img className="carta" src={require(`${"../img/"}${"back"}.png`)} alt="" />
+
+                                            )
+                                        }
+                                        if (visibilityCard) {
+                                            return (
+                                                <img className="carta" src={require(`${"../img/"}${item}${letrasAleatorias[index]}.png`)} alt="" />
+                                            )
+                                        } else {
+
+                                        }
+
+                                        return (
+                                            <img className="carta" src={require(`${"../img/"}${"back"}.png`)} alt="" />)
+                                    })
                                 }
+                            </div>
+                        </div>
 
-                            })
-                        }
+
+                        <div className="cartas">
+                            <div>
+
+                                {
+                                    cartasUser.map((item, index) => {
+                                        if (visibilityCard) {
+                                            return (
+                                                <img className="carta" src={require(`${"../img/"}${item}${letrasAleatorias[index]}.png`)} alt="" />
+                                            )
+                                        } else {
+                                            return (
+                                                <img className="carta" src={require(`${"../img/"}${"back"}.png`)} alt="" />
+
+                                            )
+                                        }
+
+                                    })
+                                }
+                            </div>
+                            <div>
+                                {visibilityCard && cartasUser.length > 0 ? <div style={{ height: "20px" }} className="valor text">
+
+                                    Score:{valorCartasUser}
+                                </div> : <div style={{ height: "20px" }}></div>}
+                            </div>
+                        </div>
+
+
+
                     </div>
-
-                    {visibilityCard && cartasUser.length > 0 ? <div className="valor text">
-
-                        Score:{valorCartasUser}
-                    </div> : null}
                 </div>
-                {visibilityCard ? <div className="containerButton">
-                    <button className={repartir ? "button disabled text" : "button "} disabled={repartir ? true : false} onClick={() => repartirUser()}> Hit </button>
-                    <button className={stand ? "button disabled text" : "button "} disabled={stand ? true : false} onClick={() => repIn()}> Stand </button>
+                <div className="containerRight">
+                    <div className={`resultado ${ganador ? 'show' : ''}`}>
+                        {ganador === "Banca" && ganador !== "Empate" ? <div>You lose </div> : ganador === "Usuario" ? <div>You win </div> : <div></div>}
+                        {ganador === "Empate" ? <div>Draw</div> : <div></div>}
+                    </div>
+                    {visibilityCard ? <div className="containerButton">
+                        <button className={repartir ? "button disabled text" : "button "} disabled={repartir ? true : false} onClick={() => repartirUser()}> Hit </button>
+                        <button className={stand ? "button disabled text" : "button "} disabled={stand ? true : false} onClick={() => repIn()}> Stand </button>
 
-                </div> : <div style={{height:"95px"}} className="containerButton"></div>}
-
+                    </div> : <div style={{ width: "220px" }} className="containerButton"></div>}
+                </div>
 
 
 

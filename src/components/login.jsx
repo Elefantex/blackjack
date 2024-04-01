@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import "./estilos.css"
 import Juego from "./juego";
 
+
+
 export default function Login() {
     const [usuario, setUsuario] = useState("");
     const [dinero, setDinero] = useState(0);
 
     const [data, setData] = useState(null)
 
+
     const register = async () => {
         try {
-            const response = await fetch("http://localhost:3001/login", {
+            const response = await fetch("https://blackjack-ggm5.onrender.com/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -38,7 +41,7 @@ export default function Login() {
         }
     };
 
-  
+
 
     return (
         <>
