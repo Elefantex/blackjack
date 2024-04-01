@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../App.css"
 import Apuestas from "./apuetas";
+import Ranking from "./rankings";
 
 function Juego({ data }) {
 
@@ -291,10 +292,15 @@ function Juego({ data }) {
     console.log(ganador)
     return (
         <div className="App" >
+            
 
             <div className="container">
                 <div className="prueba">
                     <div>
+                        <div style={{zIndex:99}}>
+                        <Ranking /> 
+
+                        </div>
                         <img className="dealer" src={ganador === "Usuario" ? require(`${"../img/"}${"dealerAngry"}.png`) : require(`${"../img/"}${"dealer"}.png`)} alt="" />
 
                     </div>

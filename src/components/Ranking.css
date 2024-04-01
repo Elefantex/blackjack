@@ -1,0 +1,39 @@
+.ranking-container {
+    margin: 50px auto;
+    width: 80%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #cb2929;
+  }
+  
+  th {
+   
+    background-color: #f2f2f2;
+    text-align: center;
+  }
+  
+  tr:hover {
+    background-color: #e06060;
+  }
+  
+  /* Estilos para limitar la altura del ranking */
+  tbody {
+    max-height: 300px; /* Limita la altura del tbody para hacer scroll */
+    overflow-y: auto; /* Agrega scroll vertical cuando el contenido excede la altura máxima */
+  }
+  
+  /* Estilos para la fila fija de encabezados */
+  thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #cb2929;
+  }
+  

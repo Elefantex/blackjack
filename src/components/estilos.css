@@ -263,28 +263,62 @@
 .noMobile {
     width: 220px
 }
-.contenedorBtnMobile{
+
+.contenedorBtnMobile {
     display: none;
 }
-.containerButtonAll{
+
+.containerButtonAll {
     width: 180px;
-     height: 80px
+    height: 80px
 }
-.chipsExtra{
+
+.chipsExtra {
     height: 104px;
     width: 180px;
 
 }
 
+.trophy {
+    position: absolute;
+    left: 150px;
+    top: 15px;
+    width: 70px;
+
+}
+
+.ranking {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.911);
+    width: 100%;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
 @media only screen and (max-width: 600px) {
-    .chipsExtra{
-        height: 104px;
-        width: 100%;
+    .trophy {
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        width: 70px;
     
     }
-    .extraText{
+    .chipsExtra {
+        height: 104px;
+        width: 100%;
+
+    }
+
+    .extraText {
         width: 120px;
     }
+
     .fichasLogin {
         display: none;
     }
@@ -344,11 +378,13 @@
         align-items: center;
 
     }
-    .buttonBet{
+
+    .buttonBet {
         min-width: 60px;
     }
-    .chips{
-         justify-content:space-between ;
+
+    .chips {
+        justify-content: space-between;
     }
-    
+
 }
