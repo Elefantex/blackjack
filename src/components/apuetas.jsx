@@ -215,7 +215,7 @@ export default function Apuestas({ data, ganador, onRestart }) {
                     </> : <>{money === 0 && apostado === 0 ? <div className="contenedorBtnMobile"><button className="buttonBet" onClick={() => reponer()}>Free chips</button> </div> : null}</>}
                 </div>
 
-                <div className="text">
+                <div className="text extraText">
 
                     Betted:{apostado}
 

@@ -282,6 +282,9 @@
         width: 100%;
     
     }
+    .extraText{
+        width: 120px;
+    }
     .fichasLogin {
         display: none;
     }
