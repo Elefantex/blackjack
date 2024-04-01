@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/blackjack/static/css/main.832eb338.css",
-    "main.js": "/blackjack/static/js/main.863fe325.js",
+    "main.js": "/blackjack/static/js/main.dd24973b.js",
     "static/js/453.7d8d24e5.chunk.js": "/blackjack/static/js/453.7d8d24e5.chunk.js",
     "static/media/dealerAngry.png": "/blackjack/static/media/dealerAngry.101bf4f722786bf4e9c1.png",
     "static/media/chip1.png": "/blackjack/static/media/chip1.8f7cdbb9f93767eb2fdf.png",
@@ -48,11 +48,11 @@
     "static/media/5D.png": "/blackjack/static/media/5D.76399605370b7a54f039.png",
     "index.html": "/blackjack/index.html",
     "main.832eb338.css.map": "/blackjack/static/css/main.832eb338.css.map",
-    "main.863fe325.js.map": "/blackjack/static/js/main.863fe325.js.map",
+    "main.dd24973b.js.map": "/blackjack/static/js/main.dd24973b.js.map",
     "453.7d8d24e5.chunk.js.map": "/blackjack/static/js/453.7d8d24e5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.832eb338.css",
-    "static/js/main.863fe325.js"
+    "static/js/main.dd24973b.js"
   ]
 }
