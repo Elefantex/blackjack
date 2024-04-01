@@ -124,13 +124,16 @@ export default function Apuestas({ data, ganador, onRestart }) {
 
     return (
         <div className="apuestas">
+            <div  className="containerButtonAll" >
+                {visibility && apostado > 0 ? <div className="contenedorBtn">
 
-            {visibility && apostado > 0 ? <div className="contenedorBtn">
+                    <button className="buttonBet" onClick={() => endBets()}>BET</button>
 
-                <button className="buttonBet" onClick={() => endBets()}>BET</button>
+                </div> : <div className=""></div>}
+                {money === 0 && apostado === 0 ? <div className="contenedorBtn"><button className="buttonBet" onClick={() => reponer()}>Free chips</button> </div> : null}
+            </div>
 
-            </div> : <div style={{ width: "130px", height: "80px" }} className=""></div>}
-            {money === 0 && apostado === 0 ? <div className="contenedorBtn"><button className="buttonBet" onClick={() => reponer()}>Free chips</button> </div> : null}
+
 
 
             <div className="chips">
@@ -190,8 +193,14 @@ export default function Apuestas({ data, ganador, onRestart }) {
 
             </div>
 
-            <div className="chips" style={{ height: "104px", width: "150px" }}>
-                <div className="contenedor">
+            <div className="chips chipsExtra" >
+                <div className="contenedorMobile">
+                    {visibility && apostado > 0 ? <div className="contenedorBtnMobile">
+
+                        <button className="buttonBet" onClick={() => endBets()}>BET</button>
+
+                    </div> : <div className=""></div>}
+                    
 
                     {chips.length > 0 ? <>
                         <img className={`chip ${animateChipDown ? 'animate-down' : ''} ${animateChipUp ? 'animate-up' : ''}`}
@@ -203,11 +212,15 @@ export default function Apuestas({ data, ganador, onRestart }) {
 
                             src={require(`${"../img/"}${"chip"}${chips[chips.length - 1]}.png`)} alt="" />
 
-                    </> : <div className="chip"></div>}
+                    </> : <>{money === 0 && apostado === 0 ? <div className="contenedorBtnMobile"><button className="buttonBet" onClick={() => reponer()}>Free chips</button> </div> : null}</>}
                 </div>
+
                 <div className="text">
-                    Betted: {apostado}
+
+                    Betted:{apostado}
+
                 </div>
+
             </div>
 
 

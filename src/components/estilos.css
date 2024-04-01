@@ -64,7 +64,7 @@
         0 0 102px #0fa,
         0 0 151px #0fa;
     /* Efecto de sombra de texto */
-    
+
 }
 
 @keyframes flicker {
@@ -117,6 +117,7 @@
 .chips {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
 
 }
 
@@ -257,4 +258,89 @@
     /* Desaparece al hacer clic */
     transition: opacity 0.5s ease;
     /* Agrega una transición suave de la opacidad */
+}
+
+.noMobile {
+    width: 220px
+}
+.contenedorBtnMobile{
+    display: none;
+}
+.containerButtonAll{
+    width: 180px;
+     height: 80px
+}
+.chipsExtra{
+    height: 104px;
+    width: 180px;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .fichasLogin {
+        display: none;
+    }
+
+    .titulo {
+        text-align: center;
+
+    }
+
+    .prueba {
+        flex-grow: 1;
+    }
+
+    .containerButton {
+        flex-direction: column;
+    }
+
+    .carta {
+        width: 33%;
+        margin-right: 0;
+    }
+
+    .cartas {
+        margin: 0;
+    }
+
+    .table {
+        margin-left: 5px;
+    }
+
+    .resultado {
+        padding: 5px 10px
+    }
+
+    .noMobile {
+        width: 0px;
+    }
+
+    .chip {
+        width: 70px;
+        height: 70px;
+    }
+
+    .contenedorMobile {
+        display: flex;
+        height: 75px;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .contenedorBtn {
+        display: none
+    }
+
+    .contenedorBtnMobile {
+        display: flex;
+        align-items: center;
+
+    }
+    .buttonBet{
+        min-width: 60px;
+    }
+    .chips{
+         justify-content:space-between ;
+    }
+    
 }

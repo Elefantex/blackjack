@@ -303,10 +303,10 @@ function Juego({ data }) {
 
 
                         <div className="cartas">
-                        {visibility && visibilityCard ? <div style={{ height: "20px" }} className="valor text">
+                            {visibility && visibilityCard ? <div style={{ height: "20px" }} className="valor text">
 
-Dealer:{valorCartasDealer}
-</div> : <div style={{ height: "20px" }} className="valor text"></div>}
+                                Dealer:{valorCartasDealer}
+                            </div> : <div style={{ height: "20px" }} className="valor text"></div>}
                             <div>
 
 
@@ -375,7 +375,7 @@ Dealer:{valorCartasDealer}
                         <button className={repartir ? "button disabled text" : "button "} disabled={repartir ? true : false} onClick={() => repartirUser()}> Hit </button>
                         <button className={stand ? "button disabled text" : "button "} disabled={stand ? true : false} onClick={() => repIn()}> Stand </button>
 
-                    </div> : <div style={{ width: "220px" }} className="containerButton"></div>}
+                    </div> : <div className="containerButton noMobile"></div>}
                 </div>
 
 
@@ -383,7 +383,11 @@ Dealer:{valorCartasDealer}
 
 
             </div>
-            <Apuestas data={data} ganador={ganador} onRestart={restart} />
+            <div style={{zIndex:2}}>
+                <Apuestas data={data} ganador={ganador} onRestart={restart} />
+
+            </div>
+
 
         </div >
     );
