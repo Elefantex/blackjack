@@ -67,6 +67,7 @@ export default function Apuestas({ data, ganador, onRestart }) {
 
 
     }
+    console.log(apostado)
     const quitarApuesta = (valor) => {
         setApostado((prev) => prev - valor)
         let fichas = [...chips]
@@ -190,7 +191,7 @@ export default function Apuestas({ data, ganador, onRestart }) {
 
             </div>
 
-            <div className="apostado"  style={{height:"108px",width:"89px"}}>
+            <div className="apostado"  style={{height:"108px",width:"150px"}}>
 
                 {chips.length > 0 ? <>
                     <img className={`chip ${animateChipDown ? 'animate-down' : ''} ${animateChipUp ? 'animate-up' : ''}`}
