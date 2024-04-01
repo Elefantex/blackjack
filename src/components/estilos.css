@@ -2,15 +2,42 @@
     position: absolute;
     bottom: 0;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.58);
+    background-color: rgb(0, 0, 0);
     width: 100%;
     z-index: 99;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url("https://cdn.pixabay.com/photo/2017/02/12/12/42/wall-2059909_640.png")
 }
 
+.titulo {
+    margin-bottom: 35px;
+    font-size: 78px;
+    animation: flicker 1.5s infinite alternate;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+}
+
+.containerLogin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fichasLogin {
+    width: 350px;
+
+}
 
 
 .input {
@@ -20,11 +47,56 @@
     position: relative;
     transition: 0.3s all;
     font-size: larger;
+    margin-bottom: 10px;
+    color: #000000;
+    /* Color del texto */
+    border: none;
+    /* Elimina el borde */
+    padding: 10px;
+    /* Añade un espacio alrededor del texto */
+    box-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+    /* Efecto de sombra de texto */
+    
 }
 
-.input:hover {
-    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+@keyframes flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #0fa,
+            0 0 80px #0fa,
+            0 0 90px #0fa,
+            0 0 100px #0fa,
+            0 0 150px #0fa;
+
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+    }
 }
+
+
 
 .submit {
     font-size: 2.4rem;
@@ -38,7 +110,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
- 
+    width: 90%;
+
 }
 
 .chips {
@@ -50,7 +123,7 @@
 .chip {
     width: 80px;
     height: 80px;
-    
+
 
 }
 
@@ -180,6 +253,8 @@
 
 .buttonBet:active {
     box-shadow: 0 0 #4433ff;
-    opacity: 0; /* Desaparece al hacer clic */
-    transition: opacity 0.5s ease; /* Agrega una transición suave de la opacidad */
+    opacity: 0;
+    /* Desaparece al hacer clic */
+    transition: opacity 0.5s ease;
+    /* Agrega una transición suave de la opacidad */
 }

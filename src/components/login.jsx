@@ -46,9 +46,19 @@ export default function Login() {
     return (
         <>
             {data ? <Juego data={data} /> : <div className="login">
+                <div className="containerLogin">
+                    <img className="fichasLogin" src={require(`${"../img/"}${"fichasI"}.png`)} alt="" />
+                    <div>
+                        <h1 className="titulo">Welcome to Blackjack</h1>
+
+                    </div>
+                    <img className="fichasLogin" src={require(`${"../img/"}${"fichasD"}.png`)} alt="" />
+
+                </div>
 
                 <input placeholder="Name" className="input" onChange={(e) => setUsuario(e.target.value)} value={usuario}></input>
-                <button className="submit" onClick={register}>Enter</button>
+                <button className="buttonBet" onClick={register}>Enter</button>
+
 
             </div>}
 

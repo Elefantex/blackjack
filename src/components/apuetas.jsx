@@ -67,7 +67,6 @@ export default function Apuestas({ data, ganador, onRestart }) {
 
 
     }
-    console.log(apostado)
     const quitarApuesta = (valor) => {
         setApostado((prev) => prev - valor)
         let fichas = [...chips]
@@ -187,28 +186,30 @@ export default function Apuestas({ data, ganador, onRestart }) {
                 <div className="text">Money: {money}</div>
 
 
-            
+
 
             </div>
 
-            <div className="apostado"  style={{height:"108px",width:"150px"}}>
+            <div className="chips" style={{ height: "104px", width: "150px" }}>
+                <div className="contenedor">
 
-                {chips.length > 0 ? <>
-                    <img className={`chip ${animateChipDown ? 'animate-down' : ''} ${animateChipUp ? 'animate-up' : ''}`}
-                        onClick={() => {
-                            if (visibility) {
-                                quitarApuesta(chips[chips.length - 1]);
-                            }
-                        }}
+                    {chips.length > 0 ? <>
+                        <img className={`chip ${animateChipDown ? 'animate-down' : ''} ${animateChipUp ? 'animate-up' : ''}`}
+                            onClick={() => {
+                                if (visibility) {
+                                    quitarApuesta(chips[chips.length - 1]);
+                                }
+                            }}
 
-                        src={require(`${"../img/"}${"chip"}${chips[chips.length - 1]}.png`)} alt="" />
+                            src={require(`${"../img/"}${"chip"}${chips[chips.length - 1]}.png`)} alt="" />
 
-                </> : <div className="chip"></div>}
+                    </> : <div className="chip"></div>}
+                </div>
                 <div className="text">
                     Betted: {apostado}
                 </div>
             </div>
-          
+
 
 
         </div>
