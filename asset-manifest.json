@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/blackjack/static/css/main.72e7ed35.css",
-    "main.js": "/blackjack/static/js/main.b8ce7fb0.js",
+    "main.css": "/blackjack/static/css/main.38ba5459.css",
+    "main.js": "/blackjack/static/js/main.4f2e0cbc.js",
     "static/js/453.7d8d24e5.chunk.js": "/blackjack/static/js/453.7d8d24e5.chunk.js",
     "static/media/fichasD.png": "/blackjack/static/media/fichasD.9e0180544773d4f75fa7.png",
     "static/media/fichasI.png": "/blackjack/static/media/fichasI.a6ec74d321f8d628c3eb.png",
@@ -23,6 +23,7 @@
     "static/media/12S.png": "/blackjack/static/media/12S.f6fc4267fb2e950ae4b2.png",
     "static/media/13S.png": "/blackjack/static/media/13S.5db9806782b87a2b10b2.png",
     "static/media/12D.png": "/blackjack/static/media/12D.cd453acd0471208f1723.png",
+    "static/media/question.png": "/blackjack/static/media/question.935e04ab4fabf3d8a122.png",
     "static/media/dealer.png": "/blackjack/static/media/dealer.cbb5aa7dfea3f9bbef46.png",
     "static/media/trophy.png": "/blackjack/static/media/trophy.54c07c87ba7935cbbdfa.png",
     "static/media/10C.png": "/blackjack/static/media/10C.12448b9e6249648cbaac.png",
@@ -50,12 +51,12 @@
     "static/media/5H.png": "/blackjack/static/media/5H.8479366da2a590292d4f.png",
     "static/media/5D.png": "/blackjack/static/media/5D.76399605370b7a54f039.png",
     "index.html": "/blackjack/index.html",
-    "main.72e7ed35.css.map": "/blackjack/static/css/main.72e7ed35.css.map",
-    "main.b8ce7fb0.js.map": "/blackjack/static/js/main.b8ce7fb0.js.map",
+    "main.38ba5459.css.map": "/blackjack/static/css/main.38ba5459.css.map",
+    "main.4f2e0cbc.js.map": "/blackjack/static/js/main.4f2e0cbc.js.map",
     "453.7d8d24e5.chunk.js.map": "/blackjack/static/js/453.7d8d24e5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72e7ed35.css",
-    "static/js/main.b8ce7fb0.js"
+    "static/css/main.38ba5459.css",
+    "static/js/main.4f2e0cbc.js"
   ]
 }
