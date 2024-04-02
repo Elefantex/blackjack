@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../App.css"
 import Apuestas from "./apuetas";
 import Ranking from "./rankings";
+import Rules from "./rules";
 
 function Juego({ data }) {
 
@@ -292,16 +293,21 @@ function Juego({ data }) {
     console.log(ganador)
     return (
         <div className="App" >
-            
+
 
             <div className="container">
                 <div className="prueba">
-                    <div>
-                        <div style={{zIndex:99}}>
-                        <Ranking /> 
+                    <div className="containerDealer">
+                        <div>
+                            <Ranking />
+
 
                         </div>
                         <img className="dealer" src={ganador === "Usuario" ? require(`${"../img/"}${"dealerAngry"}.png`) : require(`${"../img/"}${"dealer"}.png`)} alt="" />
+
+                        <div >
+                            <Rules />
+                        </div>
 
                     </div>
 
@@ -389,7 +395,7 @@ function Juego({ data }) {
 
 
             </div>
-            <div style={{zIndex:2}}>
+            <div style={{ zIndex: 2 }}>
                 <Apuestas data={data} ganador={ganador} onRestart={restart} />
 
             </div>

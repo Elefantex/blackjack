@@ -22,7 +22,7 @@ export default function Apuestas({ data, ganador, onRestart }) {
 
     const sumarDinero = async (usuario, puntos) => {
         try {
-            const response = await fetch("https://blackjack-ggm5.onrender.com/users", {
+            const response = await fetch(`https://blackjack-ggm5.onrender.com/users`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -84,11 +84,12 @@ export default function Apuestas({ data, ganador, onRestart }) {
     useEffect(() => {
         if (ganador === "Usuario") {
             setMoney(money + (apostado * 2))
-            setApostado(0)
 
             setVisibility(true)
             let valor = money + (apostado * 2)
             sumarDinero(data.usuario, valor)
+            setApostado(0)
+
             setAnimateChipDown(true);
             setTimeout(() => {
                 setAnimateChipDown(false);
@@ -98,10 +99,11 @@ export default function Apuestas({ data, ganador, onRestart }) {
         }
         if (ganador === "Banca") {
             setMoney(money)
-            setApostado(0)
             setVisibility(true)
             let valor = money
             sumarDinero(data.usuario, valor)
+            setApostado(0)
+
             setAnimateChipUp(true);
             setTimeout(() => {
                 setAnimateChipUp(false);
@@ -112,11 +114,12 @@ export default function Apuestas({ data, ganador, onRestart }) {
         }
         if (ganador === "Empate") {
             setMoney(money + apostado)
+            let valor = money + apostado
+            sumarDinero(data.usuario, valor)
+
             setApostado(0)
             setChips([])
             setVisibility(true)
-            let valor = money + apostado
-            sumarDinero(data.usuario, valor)
 
 
         }

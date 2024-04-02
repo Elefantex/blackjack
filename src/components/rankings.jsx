@@ -13,7 +13,7 @@ export default function Ranking() {
     };
     const register = async () => {
         try {
-            const response = await fetch("https://blackjack-ggm5.onrender.com/users", {
+            const response = await fetch(`https://blackjack-ggm5.onrender.com/users`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -39,7 +39,7 @@ export default function Ranking() {
         register()
 
     }, [open])
- 
+
     return (
         <>
             <img className="trophy"

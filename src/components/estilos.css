@@ -280,11 +280,17 @@
 }
 
 .trophy {
-    position: absolute;
-    left: 150px;
-    top: 15px;
+    margin: 10px;
     width: 70px;
 
+}.containerDealer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.question{
+    margin: 10px;
+    width: 70px;
 }
 
 .ranking {
@@ -299,15 +305,17 @@
     justify-content: center;
     align-items: center;
     color: white;
+    left: 0;
   }
 
 @media only screen and (max-width: 600px) {
     .trophy {
-        position: absolute;
-        left: 10px;
-        top: 15px;
+      
         width: 70px;
     
+    }
+    .question{
+        width: 70px;
     }
     .chipsExtra {
         height: 104px;

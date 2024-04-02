@@ -13,7 +13,7 @@ export default function Login() {
 
     const register = async () => {
         try {
-            const response = await fetch("https://blackjack-ggm5.onrender.com/login", {
+            const response = await fetch(`https://blackjack-ggm5.onrender.com/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

@@ -1,0 +1,31 @@
+.blackjack-rules {
+    border: 2px solid #cb2929;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  .blackjack-rules h2 {
+    
+    text-align: center;
+  }
+  
+  .blackjack-rules ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .blackjack-rules li {
+    margin-bottom: 10px;
+  }
+  
+  .blackjack-rules li::before {
+    content: "\2022"; /* Bullet character */
+    color: #cb2929;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  
