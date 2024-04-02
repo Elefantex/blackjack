@@ -26,7 +26,7 @@ export default function Login() {
             if (response.ok) {
                 // Verificar el mensaje devuelto por el servidor
                 if (data.message === "Login successful" || data.message === "Login successful") {
-                    console.log("Usuario registrado exitosamente", data);
+                    //console.log("Usuario registrado exitosamente", data);
                     setDinero(data.user.puntos);
                     setData(data.user)
                 } else {

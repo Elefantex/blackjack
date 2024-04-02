@@ -130,7 +130,7 @@ function Juego({ data }) {
 
             setRepartir(true)
             setStand(true)
-            console.log("mas 21")
+            //console.log("mas 21")
         }
     }, [cartasUser]);
     /*
@@ -230,7 +230,7 @@ function Juego({ data }) {
             setFinUser(true);
             setRepartir(true);
             setStand(true);
-            console.log("El usuario se pasó de 21");
+            //console.log("El usuario se pasó de 21");
             setGanador("Banca")
             setApuesta(false)
         }
@@ -250,11 +250,11 @@ function Juego({ data }) {
         // Lógica para determinar quién gana al final del juego
         if (stand && valorCartasDealer >= 17 && !finUser) {
             if (valorCartasDealer > 21 || valorCartasUser > valorCartasDealer) {
-                console.log("¡El usuario gana!");
+                //("¡El usuario gana!");
                 setGanador("Usuario")
 
             } else if (valorCartasUser === valorCartasDealer) {
-                console.log("¡Empate!");
+                //console.log("¡Empate!");
                 setGanador("Empate")
 
             }
@@ -263,24 +263,24 @@ function Juego({ data }) {
                 const tieneBlackjackUsuario = (cartasUser.includes(1) && (cartasDealer.includes(10) || cartasUser.includes(11) || cartasUser.includes(12) || cartasUser.includes(13))) && cartasUser.length === 2;
 
                 if (tieneBlackjackBanca && !tieneBlackjackUsuario) {
-                    console.log("¡El repartidor gana!");
+                    //console.log("¡El repartidor gana!");
 
                     setGanador("Banca")
                 } else if (!tieneBlackjackBanca && tieneBlackjackUsuario) {
-                    console.log("¡El usuario gana!");
+                    //console.log("¡El usuario gana!");
 
                     setGanador("Usuario")
                 } else if (tieneBlackjackBanca && tieneBlackjackUsuario) {
-                    console.log("¡Empate!");
+                    //console.log("¡Empate!");
                     setGanador("Empate")
                 } else if (!tieneBlackjackBanca && !tieneBlackjackUsuario) {
-                    console.log("¡Empate!");
+                    //console.log("¡Empate!");
                     setGanador("Empate")
 
                 }
             }
             else {
-                console.log("¡El repartidor gana!");
+                //console.log("¡El repartidor gana!");
                 setGanador("Banca")
 
             }
@@ -290,7 +290,6 @@ function Juego({ data }) {
     }, [stand, valorCartasDealer, finUser, valorCartasUser]);
 
 
-    console.log(ganador)
     return (
         <div className="App" >
 
