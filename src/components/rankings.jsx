@@ -57,12 +57,16 @@ export default function Ranking() {
                             </tr>
                         </thead>
                         <tbody>
-                            {data.map((user, index) => (
-                                <tr key={index}>
-                                    <td>{user.usuario}</td>
-                                    <td>{user.puntos}</td>
-                                </tr>
-                            ))}
+                            {data.map((user, index) => {
+                                if(index>9) return null
+                                return (
+                                    <tr key={index}>
+                                        <td>{user.usuario}</td>
+                                        <td>{user.puntos}</td>
+                                    </tr>
+                                )
+                            })}
+                           
                         </tbody>
                     </table>
                 </div></div> : null}
