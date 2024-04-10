@@ -102,6 +102,7 @@ function Juego({ data }) {
             }
         }
         setValorCartasDealer(total);
+      
     }, [cartasDealer]);
     useEffect(() => {
         let total = 0;
@@ -132,24 +133,8 @@ function Juego({ data }) {
             setStand(true)
             //console.log("mas 21")
         }
-    }, [cartasUser]);
-    /*
-      useEffect(() => {
-        if (stand && valorCartasDealer < 17 && !finUser) {
-          const timeoutId = setTimeout(() => {
-            repartirDealer();
-          }, 500); // 500 milisegundos (medio segundo)
-          console.log(valorCartasDealer)
-          // Limpia el timeout si el componente se desmonta o el estado cambia antes del tiempo de espera
-          return () => {
-            clearTimeout(timeoutId);
-            console.log("HOLA", valorCartasDealer);
-          }
-        }
-        console.log(valorCartasDealer)
-    
-      }, [stand, valorCartasDealer, finUser]);
-    */
+   
+    }, [cartasUser,]);
 
 
     const repIn = () => {
@@ -162,31 +147,55 @@ function Juego({ data }) {
         }
     };
 
-
     const repartirDealer = () => {
-        const dealer = [...cartasDealer];
+        let dealer = [...cartasDealer];
         let total = valorCartasDealer;
-
-        // Comprobar si hay un As que pueda ser contado como 11 sin pasarse de 21
-        let tieneAs = false;
-        for (let i = 0; i < dealer.length; i++) {
-            if (dealer[i] === 1 && total + 11 <= 21) {
-                tieneAs = true;
-                break;
+    
+        // Función para calcular el total teniendo en cuenta los ases
+        const calcularTotal = (cartas) => {
+            let totalLocal = 0;
+            let asCount = 0;
+            cartas.forEach(carta => {
+                if (carta === 1) {
+                    asCount++;
+                    totalLocal += 1;
+                } else if (carta > 10) {
+                    totalLocal += 10;
+                } else {
+                    totalLocal += carta;
+                }
+            });
+    
+            while (asCount > 0 && totalLocal + 10 <= 21) {
+                totalLocal += 10;
+                asCount--;
             }
-        }
-
-        // Si la suma actual es menor que 17 o tiene un As utilizable, extraer otra carta
-        if (total < 17 || tieneAs) {
-            let valor = Math.floor((Math.random() * 13) + 1);
-            dealer.push(valorCarta(valor));
-            total += valorCarta(valor);
-        }
-
-        setCartasDealer(dealer);
-
+    
+            return totalLocal;
+        };
+    
+        // Calcular el total inicial
+        total = calcularTotal(dealer);
+    
+        // Función para agregar una carta con retraso
+        const agregarCartaConRetraso = () => {
+            if (total < 17) {
+                let valor = Math.floor((Math.random() * 13) + 1);
+                dealer.push(valor);
+                total = calcularTotal(dealer);
+                setCartasDealer([...dealer]);
+                setValorCartasDealer(total);
+                setTimeout(agregarCartaConRetraso, 500); // Llama a la función de nuevo después de 500ms
+            }
+        };
+    
+        // Iniciar el proceso de repartir cartas con retraso
+        agregarCartaConRetraso();
     };
-
+    
+   
+    
+    
 
     const repartirUser = () => {
         const user = [...cartasUser]
@@ -238,6 +247,7 @@ function Juego({ data }) {
     useEffect(() => {
         // Lógica para que el repartidor saque cartas hasta alcanzar al menos 17 puntos
         if (stand && valorCartasDealer < 17 && !finUser) {
+            
             const timeoutId = setTimeout(() => {
                 repartirDealer();
             }, 500); // 500 milisegundos (medio segundo)
